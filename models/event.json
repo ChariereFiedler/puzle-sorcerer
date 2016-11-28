@@ -1,0 +1,59 @@
+{
+  "name": "Event",
+  "plural": "Events",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "title": {
+      "type": "string",
+      "required":true
+    },
+    "creationDate": {
+      "type": "date",
+      "required": true
+    },
+    "lastUpdateDate": {
+      "type": "date",
+      "required": false
+    },
+    "isActive": {
+      "type": "boolean",
+      "required": true
+    },
+    "publicationDate": {
+      "type": "date",
+      "required": false
+    },
+    "description": {
+      "type": "string",
+      "required": true
+    },
+    "address": {
+      "type": "string",
+      "required": "true"
+    },
+    "price": {
+      "type": "string",
+      "required": false
+    },
+    "link": {
+      "type":"string",
+      "required": false
+    },
+    "imageLink": {
+      "type": "string",
+      "required":false
+    },
+    "trailer": {
+      "type": "string",
+      "required": false
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

@@ -1,0 +1,17 @@
+﻿export class {{name}} {
+	constructor(
+		{{#each properties as |key value|}}
+		protected {{value}}: {{this.type}}
+		{{/each}}
+	) {}
+	
+	{{#each properties as |key value|}}
+	get{{upperFirstLetter value}}():{{this.type}} {
+		return this.{{value}};
+	}
+	
+	set{{upperFirstLetter value}}({{value}}:{{this.type}}):void {
+		this.{{value}} = {{value}};
+	}
+	{{/each}}
+}
