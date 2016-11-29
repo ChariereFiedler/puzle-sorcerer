@@ -1,8 +1,10 @@
 import {Type} from "./type";
 
-export class Scalar extends Type {
+namespace model {
+    export class Scalar extends Type {
 
-    constructor(name: string) {
-        super(name);
+        constructor(name: string) {
+            super(name);
+        }
     }
 }

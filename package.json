@@ -1,8 +1,8 @@
 {
-  "name": "druid-template-generator",
+  "name": "Sorcerer",
   "version": "1.0.0",
-  "description": "Typescript model generator from loopback json model",
-  "main": "index.js",
+  "description": "MDE tools",
+  "main": "src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

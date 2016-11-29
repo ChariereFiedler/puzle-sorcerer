@@ -1,6 +1,6 @@
 let fs = require('fs');
 let hbs = require('handlebars');
-let data = require('./models/event');
+let data = require('./../models/event');
 
 
 function capitalizeFirstLetter(string) {
@@ -49,7 +49,7 @@ require.extensions['.hbs'] = (module, filename)=>{
 	module.exports = fs.readFileSync(filename, 'utf8');
 };
 
-let source = require("./templates/model.hbs");
+let source = require("./../templates/model.hbs");
 
 
 
