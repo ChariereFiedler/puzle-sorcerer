@@ -1,5 +1,5 @@
 const ts = require("gulp-typescript");
-
+const path = require('path');
 /**
  * Add typescript compiler gulp task
  * @param gulp required to add task
@@ -10,11 +10,12 @@ const ts = require("gulp-typescript");
 module.exports = function (gulp, config) {
     config.tscongif = config.tscongif || "./tsconfig.json";
     config.buildDirectory = config.buildDirectory || 'dist';
+    config.srcDirectory = config.srcDirectory || 'src';
 
     const tsProject = ts.createProject(config.tscongif);
 
     gulp.task('typescript', () => {
-        return gulp.src('./public/**/*.ts')
+        return gulp.src(path.join(config.srcDirectory,'/**/*.ts'))
             .pipe(tsProject())
             .js
             .pipe(gulp.dest(config.buildDirectory));

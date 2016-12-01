@@ -1,13 +1,26 @@
 'use strict';
 
 const gulp = require('gulp');
+const path = require('path');
 
-const ts = require('./gulp_tasks/typescript')(gulp, {buildDirectory: 'src'});
+const config = {
+   buildDirectory: './dist',
+   srcDirectory: './src'
+};
 
-gulp.task('watch', ()=> {
-   gulp.watch(('src/**/*.ts'), ['typescript']);
+const ts = require('./gulp_tasks/typescript')(gulp, config);
+
+
+gulp.task('copy:templates', () => {
+   return gulp.src(path.join(config.srcDirectory, '/**/*.hbs'))
+       .pipe(gulp.dest(config.buildDirectory))
 });
 
-gulp.task('build', ['typescript']);
+gulp.task('watch', ()=> {
+   gulp.watch(path.join(config.srcDirectory, '/**/*.ts'), ['typescript']);
+   gulp.watch(path.join(config.srcDirectory, '/**/*.hbs'), ['copy:templates']);
+});
+
+gulp.task('build', ['typescript', 'copy:templates']);
 
 gulp.task('default', ['build', 'watch']);
