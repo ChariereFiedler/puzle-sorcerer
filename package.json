@@ -2,13 +2,15 @@
   "name": "Sorcerer",
   "version": "1.0.0",
   "description": "MDE tools",
-  "main": "src/index.js",
+  "main": "dist/main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "cedric chariere fiedler",
   "license": "ISC",
   "dependencies": {
+    "@types/handlebars": "^4.0.31",
+    "@types/node": "0.0.0",
     "handlebars": "^4.0.6"
   },
   "devDependencies": {
