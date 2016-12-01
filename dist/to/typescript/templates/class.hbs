@@ -1,0 +1,29 @@
+/**
+    Description of {{name}}
+*/
+
+export class {{name}} {
+
+    /**
+        Description of the constructor
+        @class {{name}}
+    {{#each attributes}}
+        @param { {{this.type}} } {{this.name}} param description
+    {{/each}}
+    */
+	constructor(
+		{{#each attributes}}
+		protected _{{this.name}}: {{this.type}},
+		{{/each}}
+	) {}
+	
+	{{#each attributes}}
+	get {{this.name}}():{{this.type}} {
+		return this._{{this.name}};
+	}
+	
+	set {{this.name}}(value:{{this.type}}) {
+		this._{{this.name}} = value;
+	}
+	{{/each}}
+}
