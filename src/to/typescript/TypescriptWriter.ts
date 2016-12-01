@@ -1,5 +1,6 @@
 import * as hbs from 'handlebars';
 import * as fs from 'fs';
+import * as path from 'path';
 
 import {IWriter} from "../IWriter";
 import {config} from "../helpers/index";
@@ -22,8 +23,7 @@ export class TypescriptWriter implements IWriter {
 
     write(clazz: Class, destination: string): string {
         let data = this._templates["class"](clazz);
-        console.log(data);
-        fs.writeFileSync(destination + clazz.name + '.ts', data);
+        fs.writeFileSync(path.join(destination, clazz.name + '.ts'), data);
         return data;
     }
 }
