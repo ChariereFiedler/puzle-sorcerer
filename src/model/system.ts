@@ -1,39 +1,40 @@
 import {Class} from "./class";
-
-namespace model {
-    export class System {
-        protected _classes: Array<Class>;
-        protected _functions: Array<Function>;
+export class System {
+    protected _classes: Array<Class>;
+    protected _functions: Array<Function>;
 
 
-        constructor(classes: Array<model.Class>, functions: Array<Function>) {
-            this._classes = classes;
-            this._functions = functions;
-        }
+    constructor(classes: Array<Class> = [], functions: Array<Function> = []) {
+        this._classes = classes;
+        this._functions = functions;
+    }
 
 
-        get classes(): Array<model.Class> {
-            return this._classes;
-        }
+    get classes(): Array<Class> {
+        return this._classes;
+    }
 
-        set classes(value: Array<model.Class>) {
-            this._classes = value;
-        }
+    set classes(value: Array<Class>) {
+        this._classes = value;
+    }
 
-        addClass(...items: model.Class[]): void {
-            this._classes.push(items);
-        }
+    addClass(...items: Class[]): void {
+        items.forEach((item)=> {
+            this._classes.push(item);
+        });
+    }
 
-        get functions(): Array<Function> {
-            return this._functions;
-        }
+    get functions(): Array<Function> {
+        return this._functions;
+    }
 
-        set functions(value: Array<Function>) {
-            this._functions = value;
-        }
+    set functions(value: Array<Function>) {
+        this._functions = value;
+    }
 
-        addFunction(...items: model.Function[]): void {
-            this._functions.push(items);
-        }
+    addFunction(...items: Function[]): void {
+        items.forEach((item)=> {
+            this._functions.push(item);
+        });
     }
 }
