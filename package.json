@@ -1,16 +1,21 @@
 {
   "name": "Sorcerer",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "MDE tools",
   "main": "dist/main.js",
+  "bin": {
+	"sorcerer": "./bin/sorcerer.js"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "cedric chariere fiedler",
   "license": "ISC",
   "dependencies": {
+    "@types/commander": "^2.3.31",
     "@types/handlebars": "^4.0.31",
     "@types/node": "0.0.0",
+    "commander": "^2.9.0",
     "handlebars": "^4.0.6"
   },
   "devDependencies": {
