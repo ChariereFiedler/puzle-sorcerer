@@ -1,24 +1,24 @@
-import {Class} from 'loopback.class';
+import {Class} from "./loopback.class";
+export class System {
 
-namespace model.loopback {
-    export class System{
-        private _classes: Array<Class>;
+    private _classes: Array<Class>;
 
-        constructor(classes: Array<model.loopback.Class>) {
-            this._classes = classes;
-        }
+    constructor() {
+        this._classes = [];
+    }
 
 
-        addClasses(... items:model.loopback.Class[]):void {
-            this._classes.push(items);
-        }
+    addClasses(... items:Class[]):void {
+        items.forEach((item) => {
+            this._classes.push(item);
+        });
+    }
 
-        get classes(): Array<model.loopback.Class> {
-            return this._classes;
-        }
+    get classes(): Array<Class> {
+        return this._classes;
+    }
 
-        set classes(value: Array<model.loopback.Class>) {
-            this._classes = value;
-        }
+    set classes(value: Array<Class>) {
+        this._classes = value;
     }
 }
