@@ -8,12 +8,12 @@ export class {{name}} {
         Description of the constructor
         @class {{name}}
     {{#each attributes}}
-        @param { {{this.type}} } {{this.name}} param description
+        @param _{{this.name}}  { {{this.type}} } param description
     {{/each}}
     */
 	constructor(
 		{{#each attributes}}
-		protected _{{this.name}}: {{this.type}},
+            protected _{{this.name}}: {{this.type}}{{#unless @last}},{{/unless}}
 		{{/each}}
 	) {}
 	
